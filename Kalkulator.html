@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator</title>
+</head>
+<body>
+    <h1>Kalkulator</h1>
+    <input type="number" id="angka1" placeholder="Angka 1">
+    <input type="number" id="angka2" placeholder="Angka 2">
+    <button id="tambah">+</button>
+    <button id="kurang">-</button>
+    <button id="kali">x</button>
+    <button id="bagi">:</button>
+    <p id="hasil">Hasil: </p>
+
+    <script>
+        const angka = document.getElementById("angka1");
+        const angka2 = document.getElementById("angka2");
+        const btn1 = document.getElementById("tambah");
+        const btn2 = document.getElementById("kurang");
+        const btn3 = document.getElementById("kali");
+        const btn4 = document.getElementById("bagi");
+        const hasil = document.getElementById("hasil");
+
+    
+
+    btn1.addEventListener("click", function(){
+        if (angka.value === "" || angka2.value === ""){
+            alert("Masukkan kedua angka");
+            return;
+        }
+        hasil.textContent = 'Hasil: ' + (Number(angka.value)+ Number(angka2.value));
+    });
+
+    btn2.addEventListener("click", function(){
+        if (angka.value === "" || angka2.value === ""){
+            alert("Masukkan kedua angka");
+            return;
+        }
+        hasil.textContent = 'Hasil: ' + (Number(angka.value) - Number(angka2.value));
+    });
+
+    btn3.addEventListener("click", function(){
+        if (angka.value === "" || angka2.value === ""){
+            alert("Masukkan kedua angka");
+            return;
+        }
+        hasil.textContent = 'Hasil: ' + (Number(angka.value) * Number(angka2.value));
+    });
+
+    btn4.addEventListener("click", function(){
+        if (angka.value === "" || angka2.value === ""){
+            alert("Masukkan kedua angka");
+            return;
+        }
+        if (angka2.value === "0"){
+            alert("Tidak bisa dibagi 0");
+        }
+        hasil.textContent = 'Hasil: ' + (Number(angka.value) / Number(angka2.value));
+    });
+        
+    </script>
+</body>
+</html>
